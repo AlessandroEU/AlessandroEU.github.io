@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laba6</title>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="/css.css" />
+    <style>
+
+body {
+  height: 100vh;
+}
+* {
+  box-sizing: border-box;
+}
+.calc {
+  background-color: rgb(57, 20, 85);
+  width: 250px;
+  height: 360px;
+  padding: 16px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.btn {
+  color: rgb(225, 15, 15);
+  margin: 3px;
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  transition: 0.7s all;
+  opacity: 0.7;
+  font-weight: 700;
+}
+.btn:hover {
+  opacity: 1;
+}
+.btn-reset {
+  width: 162px;
+}
+.btn-zero {
+  width: 106px;
+}
+.calc__body {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0;
+}
+.calc__num {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 168px;
+  flex: none;
+}
+.calc__operators {
+  width: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand p-0" href="/">
+          <img src="logo.png" alt="Logo" width="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.kdu.edu.ua/">КрНУ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://математика.укр/" target="_blank"
+                >Математика.укр</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Лабораторні роботи
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://alessandroeu.github.io/"
+                    target="_blank"
+                    >Міні-сайт</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/laba2/lab2.html"
+                    >Створити таблицю</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/laba3/lab3.html"
+                    >Створити макет сторінки</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/laba4/lab4.html"
+                    >Css-асорті</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/laba5/lab5.html"
+                    >Створення форми</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item active" href="/laba6/lab 6.html"
+                    >Калькулятор</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <body>
+      <br>
+      <form class="calc">
+          <div class="form-group">
+              <input type="text" class="form-control calc__result-field">
+          </div>
+          <div class="calc__body">
+              <div class="calc__nums">
+                  <button class="btn btn-secondary btn-reset js--btn-reset">Del</button>
+                  <button class="btn bg-white js--btn-add-res">1</button>
+                  <button class="btn bg-white js--btn-add-res">2</button>
+                  <button class="btn bg-white js--btn-add-res">3</button>
+                  <button class="btn bg-white js--btn-add-res">4</button>
+                  <button class="btn bg-white js--btn-add-res">5</button>
+                  <button class="btn bg-white js--btn-add-res">6</button>
+                  <button class="btn bg-white js--btn-add-res">7</button>
+                  <button class="btn bg-white js--btn-add-res">8</button>
+                  <button class="btn bg-white js--btn-add-res">9</button>
+                  <button class="btn bg-white btn-zero js--btn-add-res">0</button>
+                  <button class="btn bg-white js--btn-add-res">.</button>
+              </div>
+              <div class="calc__operators">
+                  <button class="btn btn-warning js--btn-add-res">*</button>
+                  <button class="btn btn-warning js--btn-add-res">/</button>
+                  <button class="btn btn-warning js--btn-add-res">-</button>
+                  <button class="btn btn-warning js--btn-add-res">+</button>
+                  <button class="btn bg-white js--btn-calc">=</button>
+              </div>
+          </div>
+      </form>
+      <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("test");
+  var form = document.querySelector(".calc");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+  var res_field = document.querySelector(".calc__result-field");
+
+  var btn_num = document.querySelectorAll(".js--btn-add-res");
+  var btn_reset = document.querySelector(".js--btn-reset");
+  var btn_calc = document.querySelector(".js--btn-calc");
+
+  for (i = 0; i < btn_num.length; i++) {
+    btn_num[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      res_field.value += this.innerHTML;
+    });
+  }
+
+  btn_reset.addEventListener("click", function (e) {
+    e.preventDefault();
+    res_field.value = "";
+  });
+
+  btn_calc.addEventListener("click", function (e) {
+    e.preventDefault();
+    res_field.value = eval(res_field.value);
+  });
+});
+
+      </script>
+  </body>
+  </html>
