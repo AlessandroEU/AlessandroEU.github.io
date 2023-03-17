@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XML Parsing Example</title>
+  </head>
+  <body>
+    <h1>XML Parsing Example</h1>
+
+    <!-- Додати кнопки для вибору групи -->
+    <button onclick="showStudents('I-12-1')">
+      Список студентов группы I-12-1
+    </button>
+    <button onclick="showStudents('I-11-1')">
+      Список студентов группы I-11-1
+    </button>
+    <button onclick="showStudents('I-10-1')">
+      Список студентов группы I-10-1
+    </button>
+
+    <!-- Місце для виведення списку студентів -->
+    <div id="studentList"></div>
+
+    <!-- Вставте код для парсингу XML-файлу тут -->
+    <script>
+      // Змінна для збереження поточної обраної групи
+      let currentGroup = "";
+
+      // Функція для парсингу XML-файлу
+      function parseXML(xml, group) {
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(xml, "text/xml");
+
+        // Отримати всі елементи "student"
+        let items = xmlDoc.getElementsByTagName("student");
+
+        // Створити список для відображення даних
+        let ul = document.createElement("ul");
+
+        // Додати елементи списку з даними
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].getAttribute("group") === group) {
+            let li = document.createElement("li");
+            li.innerHTML =
+              items[i].getElementsByTagName("fio")[0].childNodes[0].nodeValue;
+            ul.appendChild(li);
+          }
+        }
+
+        // Очистити попередню інформацію
+        document.getElementById("studentList").innerHTML = "";
+
+        // Додати список до сторінки
+        document.getElementById("studentList").appendChild(ul);
+      }
+
+      // Функція для виведення інформації про студентів з певної групи
+      function showStudents(group) {
+        if (currentGroup === group) {
+          // Якщо користувач натискає на туж саму кнопку два рази поспослуговуючись - очистити інформацію та скидання поточної обраної групи
+          document.getElementById("studentList").innerHTML = "";
+          currentGroup = "";
+          return;
+        }
+
+        currentGroup = group;
+
+        // Завантажити XML файл з сервера
+        fetch(
+          "https://raw.githubusercontent.com/AlessandroEU/test1/main/student.xml"
+        )
+          .then((response) => response.text())
+          .then((xmlString) => parseXML(xmlString, group));
+      }
+    </script>
+  </body>
+</html>
