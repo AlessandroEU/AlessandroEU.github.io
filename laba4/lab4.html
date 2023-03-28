@@ -116,57 +116,40 @@
 
     <br />
 
-    <button onclick="showStudents('I-12-1')">
-      Список студентів групи I-12-1
-    </button>
-    <button onclick="showStudents('I-11-1')">
-      Список студентів групи I-11-1
-    </button>
-    <button onclick="showStudents('I-10-1')">
-      Список студентів групи I-10-1
-    </button>
+    <button onclick="showuser()">Завантажити список участників</button>
 
-    <div id="studentList"></div>
+    <div id="userList"></div>
 
     <script>
-      let currentGroup = "";
-
-      function parseXML(xml, group) {
+      function parseXML(xml) {
         let parser = new DOMParser();
         let xmlDoc = parser.parseFromString(xml, "text/xml");
 
-        let items = xmlDoc.getElementsByTagName("student");
+        let items = xmlDoc.getElementsByTagName("user");
 
         let ul = document.createElement("ul");
 
         for (let i = 0; i < items.length; i++) {
-          if (items[i].getAttribute("group") === group) {
-            let li = document.createElement("li");
-            li.innerHTML =
-              items[i].getElementsByTagName("fio")[0].childNodes[0].nodeValue;
-            ul.appendChild(li);
-          }
+          let li = document.createElement("li");
+          li.innerHTML =
+            items[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+          ul.appendChild(li);
         }
 
-        document.getElementById("studentList").innerHTML = "";
-
-        document.getElementById("studentList").appendChild(ul);
+        document.getElementById("userList").innerHTML = "";
+        document.getElementById("userList").appendChild(ul);
       }
 
-      function showStudents(group) {
-        if (currentGroup === group) {
-          document.getElementById("studentList").innerHTML = "";
-          currentGroup = "";
-          return;
-        }
-
-        currentGroup = group;
-
+      function showuser() {
         fetch(
-          "https://raw.githubusercontent.com/primats/ooei/master/xml/example-1/student.xml"
+          "https://raw.githubusercontent.com/AlessandroEU/AlessandroEU.github.io/main/laba4/xml.xml"
         )
           .then((response) => response.text())
-          .then((xmlString) => parseXML(xmlString, group));
+          .then((xmlString) => parseXML(xmlString));
       }
     </script>
   </body>
