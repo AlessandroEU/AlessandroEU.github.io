@@ -116,11 +116,13 @@
 
     <br />
 
-    <button onclick="showuser()">Завантажити список участників</button>
+    <button onclick="toggleUserList()">Завантажити список участників</button>
 
     <div id="userList"></div>
 
     <script>
+      let userListVisible = false;
+
       function parseXML(xml) {
         let parser = new DOMParser();
         let xmlDoc = parser.parseFromString(xml, "text/xml");
@@ -144,12 +146,25 @@
         document.getElementById("userList").appendChild(ul);
       }
 
-      function showuser() {
+      function showUserList() {
         fetch(
           "https://raw.githubusercontent.com/AlessandroEU/AlessandroEU.github.io/main/laba4/xml.xml"
         )
           .then((response) => response.text())
           .then((xmlString) => parseXML(xmlString));
+      }
+
+      function hideUserList() {
+        document.getElementById("userList").innerHTML = "";
+      }
+
+      function toggleUserList() {
+        if (userListVisible) {
+          hideUserList();
+        } else {
+          showUserList();
+        }
+        userListVisible = !userListVisible;
       }
     </script>
   </body>
