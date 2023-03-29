@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <car>
+        <brand>Toyota</brand>
+        <model>Camry</model>
+        <year>2022</year>
+        <price>25000</price>
+        <photo>https://example.com/camry.jpg</photo>
+    </car>
+    <car>
+        <brand>Ford</brand>
+        <model>Fusion</model>
+        <year>2022</year>
+        <price>23000</price>
+        <photo>https://example.com/fusion.jpg</photo>
+    </car>
+    <car>
+        <brand>Honda</brand>
+        <model>Accord</model>
+        <year>2022</year>
+        <price>24000</price>
+        <photo>https://example.com/accord.jpg</photo>
+    </car>
+    <car>
+        <brand>Nissan</brand>
+        <model>Altima</model>
+        <year>2022</year>
+        <price>22000</price>
+        <photo>https://example.com/altima.jpg</photo>
+    </car>
+</cars>
