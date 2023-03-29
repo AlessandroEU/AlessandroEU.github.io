@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users>
-<user>
-  <email>taunnozopreusse-4061@yopmail.com</email>
-  <phone>1987409284</phone>
-  <name>Eric</name>
-</user>
-<user>
-  <email>xepaupobauba-7163@yopmail.com</email>
-  <phone>1988147634</phone>
-  <name>Fatima</name>
-</user>
-<user>
-  <email>dadehimauja-3896@yopmail.com</email>
-  <phone>10987652435</phone>
-  <name>Hanna</name>
-</user>
-<user>
-  <email>teizucrotteuhei-5516@yopmail.com</email>
-  <phone>1276133348</phone>
-  <name>Ali</name>
-</user>
-<user>
-  <email>tuvazurossu-2655@yopmail.com</email>
-  <phone>1098871125</phone>
-  <name>Gabriel</name>
-</user>
-<user>
-  <email>branoigoppafa-2543@yopmail.com</email>
-  <phone>1776384294</phone>
-  <name>Charles</name>
-</user>
-</users>
+<cars>
+    <car>
+        <brand>Toyota</brand>
+        <model>Corolla</model>
+        <year>2015</year>
+        <dateOfSale>2022-10-01</dateOfSale>
+        <price>15000</price>
+        <photo>corolla.jpg</photo>
+    </car>
+    <car>
+        <brand>Ford</brand>
+        <model>Focus</model>
+        <year>2018</year>
+        <dateOfSale>2022-11-15</dateOfSale>
+        <price>18000</price>
+        <photo>focus.jpg</photo>
+    </car>
+    <car>
+        <brand>Honda</brand>
+        <model>Civic</model>
+        <year>2016</year>
+        <dateOfSale>2022-09-30</dateOfSale>
+        <price>16000</price>
+        <photo>civic.jpg</photo>
+    </car>
+    <car>
+        <brand>Nissan</brand>
+        <model>Sentra</model>
+        <year>2017</year>
+        <dateOfSale>2022-08-15</dateOfSale>
+        <price>17000</price>
+        <photo>sentra.jpg</photo>
+    </car>
+    <car>
+        <brand>Chevrolet</brand>
+        <model>Cruze</model>
+        <year>2019</year>
+        <dateOfSale>2022-07-01</dateOfSale>
+        <price>19000</price>
+        <photo>cruze.jpg</photo>
+    </car>
+</cars>
