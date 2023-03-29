@@ -5,27 +5,27 @@
         <model>Camry</model>
         <year>2022</year>
         <price>25000</price>
-        <photo>https://example.com/camry.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP527/2069a6bcf90a4df092c177a9b16ba696_ful.jpg</photo>
     </car>
     <car>
         <brand>Ford</brand>
         <model>Fusion</model>
         <year>2022</year>
         <price>23000</price>
-        <photo>https://example.com/fusion.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP539/2aad4e7ae3114df2997eba0373a3d1e3_ful.jpg</photo>
     </car>
     <car>
         <brand>Honda</brand>
         <model>Accord</model>
         <year>2022</year>
         <price>24000</price>
-        <photo>https://example.com/accord.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP540/7bf958ddce2d431b955592aeb4f38d66_ful.jpg</photo>
     </car>
     <car>
         <brand>Nissan</brand>
         <model>Altima</model>
         <year>2022</year>
         <price>22000</price>
-        <photo>https://example.com/altima.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP532/b793fddd934644f0b3743915b87c2fc9_ful.jpg</photo>
     </car>
 </cars>

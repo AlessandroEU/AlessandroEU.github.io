@@ -119,10 +119,13 @@
     <button onclick="toggleCarList()">
       Завантажити список проданих автомобілів
     </button>
+    <button onclick="toggleCarListInStock()">Авто в наявності</button>
     <div id="carList"></div>
+    <div id="carListInStock"></div>
 
     <script>
       let carListVisible = false;
+      let carListInStockVisible = false;
 
       function parseXML(xml) {
         let parser = new DOMParser();
@@ -153,7 +156,7 @@
             items[i].getElementsByTagName("model")[0].childNodes[0].nodeValue;
           img.style.width = "200px";
           img.style.height = "200px";
-          img.style.margin = "20px";
+          img.style.margin = "10px";
           img.style.borderRadius = "10px";
           li.appendChild(img);
 
@@ -181,8 +184,70 @@
           hideCarList();
         } else {
           showCarList();
+          hideCarListInStock();
+          carListInStockVisible = false;
         }
         carListVisible = !carListVisible;
+      }
+
+      function parseXMLInStock(xml) {
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(xml, "text/xml");
+
+        let items = xmlDoc.getElementsByTagName("car");
+
+        let ul = document.createElement("ul");
+
+        for (let i = 0; i < items.length; i++) {
+          let li = document.createElement("li");
+          li.innerHTML =
+            items[i].getElementsByTagName("brand")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("model")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("year")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+          let img = document.createElement("img");
+          img.src =
+            items[i].getElementsByTagName("photo")[0].childNodes[0].nodeValue;
+          img.alt =
+            items[i].getElementsByTagName("model")[0].childNodes[0].nodeValue;
+          img.style.width = "200px";
+          img.style.height = "200px";
+          img.style.margin = "10px";
+          img.style.borderRadius = "10px";
+          li.appendChild(img);
+
+          ul.appendChild(li);
+        }
+
+        document.getElementById("carListInStock").innerHTML = "";
+        document.getElementById("carListInStock").appendChild(ul);
+      }
+
+      function showCarListInStock() {
+        fetch(
+          "https://raw.githubusercontent.com/AlessandroEU/AlessandroEU.github.io/main/laba4/xml1.xml"
+        )
+          .then((response) => response.text())
+          .then((xmlString) => parseXMLInStock(xmlString));
+      }
+
+      function hideCarListInStock() {
+        document.getElementById("carListInStock").innerHTML = "";
+      }
+
+      function toggleCarListInStock() {
+        if (carListInStockVisible) {
+          hideCarListInStock();
+        } else {
+          showCarListInStock();
+          hideCarList();
+          carListVisible = false;
+        }
+        carListInStockVisible = !carListInStockVisible;
       }
     </script>
   </body>
