@@ -116,37 +116,49 @@
 
     <br />
 
-    <button onclick="toggleUserList()">Завантажити список участників</button>
-
-    <div id="userList"></div>
+    <button onclick="toggleCarList()">Завантажити список автомобілів</button>
+    <div id="carList"></div>
 
     <script>
-      let userListVisible = false;
+      let carListVisible = false;
 
       function parseXML(xml) {
         let parser = new DOMParser();
         let xmlDoc = parser.parseFromString(xml, "text/xml");
 
-        let items = xmlDoc.getElementsByTagName("user");
+        let items = xmlDoc.getElementsByTagName("car");
 
         let ul = document.createElement("ul");
 
         for (let i = 0; i < items.length; i++) {
           let li = document.createElement("li");
           li.innerHTML =
-            items[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+            items[i].getElementsByTagName("brand")[0].childNodes[0].nodeValue +
             " - " +
-            items[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+            items[i].getElementsByTagName("model")[0].childNodes[0].nodeValue +
             " - " +
-            items[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+            items[i].getElementsByTagName("year")[0].childNodes[0].nodeValue +
+            " - " +
+            items[i].getElementsByTagName("dateOfSale")[0].childNodes[0]
+              .nodeValue +
+            " - " +
+            items[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+          let img = document.createElement("img");
+          img.src =
+            items[i].getElementsByTagName("photo")[0].childNodes[0].nodeValue;
+          img.alt =
+            items[i].getElementsByTagName("model")[0].childNodes[0].nodeValue;
+          li.appendChild(img);
+
           ul.appendChild(li);
         }
 
-        document.getElementById("userList").innerHTML = "";
-        document.getElementById("userList").appendChild(ul);
+        document.getElementById("carList").innerHTML = "";
+        document.getElementById("carList").appendChild(ul);
       }
 
-      function showUserList() {
+      function showCarList() {
         fetch(
           "https://raw.githubusercontent.com/AlessandroEU/AlessandroEU.github.io/main/laba4/xml.xml"
         )
@@ -154,17 +166,17 @@
           .then((xmlString) => parseXML(xmlString));
       }
 
-      function hideUserList() {
-        document.getElementById("userList").innerHTML = "";
+      function hideCarList() {
+        document.getElementById("carList").innerHTML = "";
       }
 
-      function toggleUserList() {
-        if (userListVisible) {
-          hideUserList();
+      function toggleCarList() {
+        if (carListVisible) {
+          hideCarList();
         } else {
-          showUserList();
+          showCarList();
         }
-        userListVisible = !userListVisible;
+        carListVisible = !carListVisible;
       }
     </script>
   </body>
