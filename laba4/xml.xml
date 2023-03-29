@@ -14,7 +14,7 @@
         <year>2018</year>
         <dateOfSale>2022-11-15</dateOfSale>
         <price>18000</price>
-        <photo>https://motoresmx.com/wp-content/uploads/2018/12/Focus.jpeg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP507/1bd94ea9145848abae420ac087d29b0e_ful.jpg</photo>
     </car>
     <car>
         <brand>Honda</brand>
@@ -22,7 +22,7 @@
         <year>2016</year>
         <dateOfSale>2022-09-30</dateOfSale>
         <price>16000</price>
-        <photo>https://images.hgmsites.net/hug/2016-honda-civic-sdn_100546622_h.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP527/bb89ed36232f46129a87d5624807da5e_ful.jpg</photo>
     </car>
     <car>
         <brand>Nissan</brand>
@@ -30,7 +30,7 @@
         <year>2017</year>
         <dateOfSale>2022-08-15</dateOfSale>
         <price>17000</price>
-        <photo>https://www.motortrend.com/uploads/sites/5/2016/09/2017-Nissan-Sentra-SR-Turbo-front-side-03-e1474992950632.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP263/1a514c3b3e8f48269ba2b32cec2a8f21_ful.jpg</photo>
     </car>
     <car>
         <brand>Chevrolet</brand>
@@ -38,6 +38,6 @@
         <year>2019</year>
         <dateOfSale>2022-07-01</dateOfSale>
         <price>19000</price>
-        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/2019_Chevrolet_Cruze_LT_RS%2C_Front_Right%2C_06-22-2021.jpg/1200px-2019_Chevrolet_Cruze_LT_RS%2C_Front_Right%2C_06-22-2021.jpg</photo>
+        <photo>https://cs.copart.com/v1/AUTH_svc.pdoc00001/LPP599/2851182a44ef4db890e4bd6614e602c6_ful.jpg</photo>
     </car>
 </cars>
