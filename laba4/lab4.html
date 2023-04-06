@@ -122,6 +122,18 @@
     <div id="carListInStock"></div>
 
     <script>
+      let buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.classList.contains("clicked")) {
+            button.classList.remove("clicked");
+          } else {
+            buttons.forEach((btn) => btn.classList.remove("clicked"));
+            button.classList.add("clicked");
+          }
+        });
+      });
+
       let carListVisible = false;
       let carListInStockVisible = false;
 
